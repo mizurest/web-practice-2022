@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ゆらゆら</title>
+    <style>
+      body{
+        margin: 0 auto;
+        width: 100vw;
+      }
+      .bg-wrap{
+        width: 2000px;
+        height: 1000px;
+        overflow: hidden;
+      }
+      .bg{
+        animation: yurayura 9s infinite;
+        animation-fill-mode: forwards;
+        width: 100%;
+        margin: -35px;
+      }
+      .border{
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        width: 0px;
+        height: 0px;
+        border: 2000px solid #658FC9;
+        animation: up 0.7s forwards;
+        animation-delay: 1.5s;
+        transform: translate(-50%, -50%);
+      }
+      @keyframes up {
+        100%{
+          width: 2000px;
+          height: 2000px;
+          border: 2000px solid #658FC9;
+          transform: translate(-50%, -50%);
+        }
+      }
+      
+      @keyframes yurayura {
+        0% , 100%{
+          transform: rotate(1deg);
+        }
+        50%{
+          transform: rotate(-1deg);
+        }
+      }
+    </style>
+</head>
+<body>
+  <div class="bg-wrap">
+    <img class="bg" src="./bg.jpg"></img>
+  </div>
+  
+  <div class="border"></div>
+</body>
+</html>
